@@ -33,9 +33,33 @@ export default new Router({
           // 智能组件
           path: '/wisdom',
           component: resolve => require(['../components/page/Wisdom.vue'], resolve),
-          meta: {title: '数码影音-魅族商城'}
+          meta: {title: '智能-魅族商城'}
         },
-        ]
+        {
+          // 生活组件
+          path: '/life',
+          component: resolve => require(['../components/page/Life.vue'], resolve),
+          meta: {title: '生活周边-魅族商城'}
+        },
+        {
+          // 服务组件
+          path: '/service',
+          component: resolve => require(['../components/page/Service.vue'], resolve),
+          meta: {title: '服务支持-魅族官网'}
+        },
+        {
+          // 专卖店组件
+          path: '/retail',
+          component: resolve => require(['../components/page/Retail.vue'], resolve),
+          meta: {title: '专卖店查询-魅族官网'}
+        },
+      ]
+    },
+    {
+      // Flyme组件
+      path: '/Flyme',
+      component: resolve => require(['../components/page/Flyme.vue'], resolve),
+      meta: {title: 'Flyme官网-首页'}
     }
-  ]
+    ]
 })

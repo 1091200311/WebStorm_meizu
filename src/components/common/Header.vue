@@ -27,7 +27,7 @@
           <router-link to="/service">服务</router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/index">专卖店</router-link>
+          <router-link to="/retail">专卖店</router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/index">社区</router-link>
