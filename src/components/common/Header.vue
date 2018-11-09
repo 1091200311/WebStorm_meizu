@@ -9,22 +9,22 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
         <b-nav-item>
-          <router-link to="/">手机</router-link>
+          <router-link to="/phone">手机</router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/subscriptions">声学</router-link>
+          <router-link to="/voice">声学</router-link>
         </b-nav-item>
         <b-nav-item>
-        <router-link to="/notifications">智能</router-link>
+        <router-link to="/wisdom">智能</router-link>
       </b-nav-item>
         <b-nav-item>
-          <router-link to="/index">生活</router-link>
+          <router-link to="/life">生活</router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/index">Flyme</router-link>
+          <router-link to="/flyme">Flyme</router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/index">服务</router-link>
+          <router-link to="/service">服务</router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/index">专卖店</router-link>
@@ -84,21 +84,5 @@
 
   a {
     color: #324157;
-  }
-
-  .btn {
-
-  }
-
-  .write-btn {
-    float: right;
-    width: 100px;
-    height: 40px;
-    line-height: 24px;
-    margin: 8px 15px 0;
-    border-radius: 20px;
-    font-size: 15px;
-    color: #fff;
-    background-color: #ea6f5a;
   }
 </style>

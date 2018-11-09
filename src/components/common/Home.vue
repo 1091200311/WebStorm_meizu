@@ -1,22 +1,25 @@
 <template>
+  <div>
+    <v-head></v-head>
     <div>
-      <v-header></v-header>
-      <div>
-        <keep-alive>
-        <router-view></router-view>
-        </keep-alive>
-      </div>
+      <keep-alive>
+        <router-view> </router-view>
+      </keep-alive>
     </div>
+    <v-footer></v-footer>
+  </div>
 </template>
 
 <script>
   import vHead from './Header.vue';
-    export default {
-        name: "Home",
-      components: {
-        vHead
-      },
-    }
+  import vFooter from './Footer';
+  export default {
+    name: "Home",
+    components: {
+      vHead,
+      vFooter
+    },
+  }
 </script>
 
 <style scoped>
