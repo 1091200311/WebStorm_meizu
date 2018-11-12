@@ -1,67 +1,35 @@
 <template>
 <div>
-  <b-navbar toggleable="md" type="light" variant="default" fixed class="box">
-    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-    <router-link to="/">
-      <b-navbar-brand>
-        <b-img width="85" height="50" src="../static/img/meizu.png"/>
-      </b-navbar-brand>
-    </router-link>
-    <b-collapse is-nav id="nav_collapse">
-      <b-navbar-nav>
-        <b-nav-item>
-          <router-link to="/phone">手机</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/voice">声学</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/wisdom">智能</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/life">生活</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/flyme">Flyme</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/service">服务</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/retail">专卖店</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/index">社区</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/index">App下载</router-link>
-        </b-nav-item>
-        <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2 search-input" type="text" placeholder="Search"/>
-          <font-awesome-icon icon="search" style="color: #999;font-size: 20px;margin-left: -50px;"/>
-        </b-nav-form>
-        <b-nav-item-dropdown right v-if="token!=null">
-          <template slot="button-content">
-            <b-img rounded="circle" width="35" height="35" src="https://img-res.mzres.com/img/download/uc/12/66/52/17/90/126652179/w200h200?t=1472193993000"/>
-          </template>
-          <b-dropdown-item><router-link to="list">我的订单</router-link></b-dropdown-item>
-          <b-dropdown-item href="#">消息通知</b-dropdown-item>
-          <b-dropdown-item href="#">M码通道</b-dropdown-item>
-          <b-dropdown-item href="#">我的收藏</b-dropdown-item>
-          <b-dropdown-item @click="logout"><router-link to="login">退出登录</router-link> </b-dropdown-item>
-        </b-nav-item-dropdown>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
   <div>
     <b-card no-body>
       <b-tabs pills card vertical>
         <b-tab title="订单中心" disabled></b-tab>
         <b-tab title="我的订单">
-          我的订单
+          <b-card no-body>
+            <b-tabs pills card>
+              <b-tab title="全部订单">
+              </b-tab>
+              <b-tab title="待付款">
+              </b-tab>
+              <b-tab title="待发货">
+              </b-tab>
+              <b-tab title="已发货">
+              </b-tab>
+              <b-tab title="其他">
+              </b-tab>
+            </b-tabs>
+          </b-card>
         </b-tab>
         <b-tab title="我的回购单">
-          我的回购单
+          <div>
+            <b-nav>
+              <b-nav-item>产品型号</b-nav-item>
+              <b-nav-item>回购价格</b-nav-item>
+              <b-nav-item>评估描述情况</b-nav-item>
+              <b-nav-item>当前回购状态</b-nav-item>
+              <b-nav-item>操作</b-nav-item>
+            </b-nav>
+          </div>
         </b-tab>
         <b-tab title="个人中心" disabled></b-tab>
         <b-tab title="地址管理">
@@ -77,23 +45,24 @@
          建议反馈
         </b-tab>
         <b-tab title="资产中心" disabled></b-tab>
+        <b-tab title="我的优惠券">
+          我的优惠券
+        </b-tab>
+        <b-tab title="我的红包">
+          我的红包
+        </b-tab>
+        <b-tab title="我的回购金">
+          我的回购金
+        </b-tab>
         <b-tab title="服务中心" disabled></b-tab>
+        <b-tab title="退款/退货跟踪">
+         退款/退货跟踪
+        </b-tab>
+        <b-tab title="以旧换新" class="desc">
+          <a>以旧换新</a>
+        </b-tab>
       </b-tabs>
     </b-card>
-  </div>
-  <div class="footer-wrap">
-    <b-row class="footer-service">
-      <b-col  cols="2" v-for="activities in activityList" :key="activities.id" style="width: 15%;text-align: center;float: left">
-        <img style="width: 50px" :src="activities.url">
-        <p style=" line-height:30px; color: #999;font-size: 14px">{{activities.content}}</p>
-      </b-col>
-    </b-row>
-    <div style="text-align: right">
-      <span style="color: #999;font-size: 12px;line-height: 30px">周一至周日 7:30-24:00</span>
-      <p class="tel">400-788-3333</p>
-      <a class="online-btn">在线客服</a>
-    </div>
-    <hr class="footer-hr">
   </div>
 </div>
 </template>
@@ -163,6 +132,10 @@
   }
 </script>
 <style scoped>
+  .desc{
+    padding-top: 332px;
+    text-align: center;
+  }
   .footer-hr{
     -webkit-margin-before: 0.5em;
     -webkit-margin-after: 0.5em;
