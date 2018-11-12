@@ -16,7 +16,13 @@
         <b-tab title="账号管理">
         </b-tab>
         <b-tab title="魅币">
-          <b-tabs pills card>
+          <div class="account">
+            <span>魅币</span>
+            <span>0.02</span>
+            <a class="link-exchange">兑换</a>
+          </div>
+          <div>
+          <b-tabs pills card class="tabMenu">
             <b-tab title="魅币充值">
             </b-tab>
             <b-tab title="明细">
@@ -29,9 +35,18 @@
               </b-nav>
         </b-tab>
           </b-tabs>
+          </div>
         </b-tab>
       </b-tabs>
     </b-card>
+    <b-nav>
+      <b-nav-item>关于魅族</b-nav-item>
+      <b-nav-item>工作机会</b-nav-item>
+      <b-nav-item>联系我们</b-nav-item>
+      <b-nav-item>法律声明</b-nav-item>
+      <b-nav-item>常见问题</b-nav-item>
+      <b-nav-item>简体中文</b-nav-item>
+    </b-nav>
   </div>
 </template>
 
@@ -46,5 +61,29 @@
 </script>
 
 <style scoped>
-
+  .tabMenu{
+    display: block;
+    float: left;
+    line-height: 56px;
+  }
+  .link-exchange{
+    display: inline-block;
+    vertical-align: middle;
+    background: #32a5e7;
+    color: #fff;
+    padding: 0 3px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    margin-left: 30px;
+  }
+  span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+.account{
+  height: 50px;
+  line-height: 50px;
+  margin-top: 22px;
+}
 </style>
