@@ -65,19 +65,19 @@
             },
             {
               "id": 2,
-              "url": "http://cdns2.freepik.com/free-photo/big-earphones_318-715.jpg",
+              "url": "http://pic.58pic.com/58pic/13/70/28/33f58PICcnD_1024.jpg",
               "content":"400-788-3333",
               "tips":"周一至周日 7:30-24:00"
             },
             {
               "id": 3,
-              "url": "http://cdns2.freepik.com/free-photo/big-earphones_318-715.jpg",
+              "url": "http://pic30.nipic.com/20130617/12099365_112411676125_2.png",
               "content":"魅族科技",
               "tips":"直接对话微信客服"
             },
             {
               "id": 4,
-              "url": "http://cdns2.freepik.com/free-photo/big-earphones_318-715.jpg",
+              "url": "http://cdns2.freepik.com/free-photo/weibo-social-logo_318-64846.jpg",
               "content":"魅族 care 微博",
               "tips":"关注微博，了解资讯"
             },

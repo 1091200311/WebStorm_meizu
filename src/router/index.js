@@ -53,13 +53,42 @@ export default new Router({
           component: resolve => require(['../components/page/Retail.vue'], resolve),
           meta: {title: '专卖店查询-魅族官网'}
         },
+        {
+          path:'/u/:id',
+          component: resolve => require(['../components/page/Author.vue'], resolve),
+          meta:{title:'用户详情'}
+        },
+        {
+          //所有专题组件
+          path: '/collections',
+          component: resolve => require(['../components/page/Collections.vue'], resolve),
+          meta: {title: '所有专题'}
+        },
+        {
+          // 个人中心组件
+          path: '/u',
+          component: resolve => require(['../components/page/User.vue'], resolve),
+          meta: {title: '个人中心'}
+        },
+        {
+          // 我的订单组件
+          path: '/list',
+          component: resolve => require(['../components/page/List.vue'], resolve),
+          meta: {title: '我的订单'}
+        },
+        {
+          path:'login',
+          component: resolve => require(['../components/page/Login.vue'], resolve),
+          meta:{title:'退出'}
+        }
       ]
     },
+
     {
       // Flyme组件
       path: '/Flyme',
       component: resolve => require(['../components/page/Flyme.vue'], resolve),
       meta: {title: 'Flyme官网-首页'}
     }
-    ]
+  ]
 })
