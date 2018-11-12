@@ -71,19 +71,18 @@ export default new Router({
           meta: {title: '个人中心'}
         },
         {
-          // 我的订单组件
-          path: '/list',
-          component: resolve => require(['../components/page/List.vue'], resolve),
-          meta: {title: '我的订单'}
-        },
-        {
           path:'login',
           component: resolve => require(['../components/page/Login.vue'], resolve),
           meta:{title:'退出'}
         }
       ]
     },
-
+    {
+      // 我的订单组件
+      path: '/list',
+      component: resolve => require(['../components/page/List.vue'], resolve),
+      meta: {title: '我的订单'}
+    },
     {
       // Flyme组件
       path: '/Flyme',
