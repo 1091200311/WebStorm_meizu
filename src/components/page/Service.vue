@@ -10,11 +10,20 @@
               v-model="slide"
               @sliding-start="onSlideStart"
               @sliding-end="onSlideEnd">
-    <!-- Slides with image only -->
     <b-carousel-slide v-for="image in imageList" :key="image.id"
                       :img-src="image.url" style="height: 100%;width: 100%">
     </b-carousel-slide>
   </b-carousel>
+    <div class="center-wrapper">
+      <p style="font-size: 20px;text-align: center;padding: 68px 0 36px">请通过以下方式联系我们</p>
+      <b-row>
+        <b-col cols="3" v-for="contacts in contactList" :key="contacts.id" class="online">
+          <img class="icon" :src="contacts.url">
+          <em class="title">{{contacts.content}}</em>
+          <i class="tips">{{contacts.tips}}</i>
+        </b-col>
+      </b-row>
+    </div>
     </div>
 </template>
 
@@ -46,7 +55,33 @@
               "id": 5,
               "url": "https://cimg2.res.meizu.com/care/201711/fA854F30zJvutNrqQoSTUVWnYZamlieh.jpg"
             }
-          ]
+          ],
+          contactList: [
+            {
+              "id": 1,
+              "url": "http://cdns2.freepik.com/free-photo/big-earphones_318-715.jpg",
+              "content":"周一至周日",
+              "tips":"点击在线咨询服务"
+            },
+            {
+              "id": 2,
+              "url": "http://cdns2.freepik.com/free-photo/big-earphones_318-715.jpg",
+              "content":"400-788-3333",
+              "tips":"周一至周日 7:30-24:00"
+            },
+            {
+              "id": 3,
+              "url": "http://cdns2.freepik.com/free-photo/big-earphones_318-715.jpg",
+              "content":"魅族科技",
+              "tips":"直接对话微信客服"
+            },
+            {
+              "id": 4,
+              "url": "http://cdns2.freepik.com/free-photo/big-earphones_318-715.jpg",
+              "content":"魅族 care 微博",
+              "tips":"关注微博，了解资讯"
+            },
+          ],
         }
       },
       methods: {
@@ -61,5 +96,46 @@
 </script>
 
 <style scoped>
+  .tips{
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    color: #999;
+    margin-top: -4px;
+  }
+  em{
+    font-weight: 400;
+    font-style: normal;
+  }
+  .title{
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    padding-top: 12px;
+    margin-bottom: 7px;
+  }
+  .icon{
+    display: block;
+    width: 34px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto;
+  }
+  .online{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 26px 0;
+    cursor: pointer;
+    margin-bottom: -20px;
+  }
+  .center-wrapper{
+    width: 1240px;
+    min-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+  }
 
 </style>
