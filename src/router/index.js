@@ -60,7 +60,7 @@ export default new Router({
           meta: {title: '我的订单'}
         },
         {
-          path:'/u/:id',
+          path:'/g/:id',
           component: resolve => require(['../components/page/Author.vue'], resolve),
           meta:{title:'用户详情'}
         },
