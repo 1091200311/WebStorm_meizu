@@ -61,7 +61,7 @@ export default new Router({
         },
         {
           path:'/g/:id',
-          component: resolve => require(['../components/page/Author.vue'], resolve),
+          component: resolve => require(['../components/page/Goods.vue'], resolve),
           meta:{title:'用户详情'}
         },
         {
