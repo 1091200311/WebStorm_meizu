@@ -54,6 +54,12 @@ export default new Router({
           meta: {title: '专卖店查询-魅族官网'}
         },
         {
+          // 我的订单组件
+          path: '/list',
+          component: resolve => require(['../components/page/List.vue'], resolve),
+          meta: {title: '我的订单'}
+        },
+        {
           path:'/u/:id',
           component: resolve => require(['../components/page/Author.vue'], resolve),
           meta:{title:'用户详情'}
@@ -65,12 +71,6 @@ export default new Router({
           meta: {title: '所有专题'}
         },
         {
-          // 个人中心组件
-          path: '/u',
-          component: resolve => require(['../components/page/User.vue'], resolve),
-          meta: {title: '个人中心'}
-        },
-        {
           path:'login',
           component: resolve => require(['../components/page/Login.vue'], resolve),
           meta:{title:'退出'}
@@ -78,16 +78,22 @@ export default new Router({
       ]
     },
     {
-      // 我的订单组件
-      path: '/list',
-      component: resolve => require(['../components/page/List.vue'], resolve),
-      meta: {title: '我的订单'}
+      // 个人中心组件
+      path: '/u',
+      component: resolve => require(['../components/page/User.vue'], resolve),
+      meta: {title: '个人中心'}
     },
     {
       // Flyme组件
       path: '/Flyme',
       component: resolve => require(['../components/page/Flyme.vue'], resolve),
       meta: {title: 'Flyme官网-首页'}
+    },
+    {
+      // 购物车组件
+      path: '/Shopping-car',
+      component: resolve => require(['../components/page/Shopping-car.vue'], resolve),
+      meta: {title: '购物车-我的购物车'}
     }
   ]
 })
