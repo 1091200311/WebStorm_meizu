@@ -65,12 +65,6 @@ export default new Router({
           meta:{title:'用户详情'}
         },
         {
-          //所有专题组件
-          path: '/collections',
-          component: resolve => require(['../components/page/Collections.vue'], resolve),
-          meta: {title: '所有专题'}
-        },
-        {
           path:'login',
           component: resolve => require(['../components/page/Login.vue'], resolve),
           meta:{title:'退出'}

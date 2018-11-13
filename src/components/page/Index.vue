@@ -17,20 +17,40 @@
       <div class="index-center-wrap">
         <b-row>
         <b-col  v-for="phones in phoneList" :key="phones.id" class="big">
+          <router-link :to="'/g/'+phones.id">
           <img  class="goods-img" :src="phones.url">
           <span class="box-info">
           <span class="goods-name">{{phones.name}}</span>
           <span class="goods-desc">{{phones.desc}}</span>
           <p class="goods-price">{{phones.price}}</p>
           </span>
+          </router-link>
         </b-col>
+        </b-row>
+        <b-row>
+          <b-col  v-for="phones in phoneList1" :key="phones.id" class="phone">
+            <router-link :to="'/g/'+phones.id">
+            <img  style="height: 230px;margin-top: 30px;" :src="phones.url">
+            <span style="top: 270px;left: 0;width: 100%;">
+          <p style="color: #333;font-size: 16px;margin-bottom: 2px;">{{phones.name}}</p>
+          <p style="color: #999;font-size: 14px;">{{phones.desc}}</p>
+          <p style="position: relative;display: inline-block;color: #c00;font-size: 22px;padding-left: 14px;">{{phones.price}}</p>
+          </span>
+            </router-link>
+          </b-col>
         </b-row>
       </div>
       <div>
         <h3 class="title">魅族声学</h3>
       </div>
       <div class="section-box">
-        <img  class="pic" src="https://fms.res.meizu.com/dms/2018/10/23/89d0ea78-27bd-4e9d-8a50-db02395d7ee4.jpg">
+        <img class="pic" src="https://fms.res.meizu.com/dms/2018/10/23/89d0ea78-27bd-4e9d-8a50-db02395d7ee4.jpg">
+      </div>
+      <div>
+        <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/09/25/6192b514-c9e8-4d4d-81d2-a952afb43976.jpg">
+      </div>
+        <div>
+        <img style="width: 300px;height: 375px"src="https://fms.res.meizu.com/dms/2018/10/09/092fe22f-bc33-4b57-87e7-55168d56d9b3.jpg"><div>
       </div>
       <div>
         <h3 class="title">智能配件</h3>
@@ -38,28 +58,38 @@
       <div class="section-box">
         <img  class="pic" src="https://fms.res.meizu.com/dms/2018/09/29/b522dfc3-c4e0-40d6-be08-30c7e467b2b1.jpg">
       </div>
+          <div>
+            <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/09/05/35c143de-5b05-4e2c-87d6-9373bede4831.jpg">
+          </div>
+          <div>
+            <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/09/26/7568037b-a5f4-4f42-b503-1a7d4686d3e4.jpg">
       <div>
         <h3 class="title">生活周边</h3>
         <div class="section-box">
           <img  class="pic" src="https://fms.res.meizu.com/dms/2018/08/07/897616fb-b7d1-49e8-9874-36f0b716048b.jpg">
         </div>
+        <div>
+          <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/09/05/35c143de-5b05-4e2c-87d6-9373bede4831.jpg">
+        </div>
+        <div>
+          <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/10/09/092fe22f-bc33-4b57-87e7-55168d56d9b3.jpg">
+        </div>
+      </div>
       </div>
       <div>
         <h3 class="title">社区热帖</h3>
       </div>
       <div>
         <h3 class="title">精彩视频</h3>
-        <b-row>
-        <b-col  v-for="phones in phoneList" :key="phones.id">
-        </b-col>
-        </b-row>
       </div>
       </div>
+    </div>
 </template>
 
 <script>
   import vCarousel from '../common/Carousel';
-
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
   export default {
     name: "Index",
     components: {
@@ -108,12 +138,53 @@
             desc:"骁龙845 屏幕下指纹",
             price:"￥698起"
           }
-        ]
+        ],
+        phoneList1:[
+          {
+            id:"1",
+            url:"https://openfile.meizu.com/group1/M00/06/A9/Cgbj0FusSK2AQZgiAAlFKHoO-co889.png",
+            name:"魅族X8",
+            desc:"骁龙845 屏幕下指纹",
+            price:"￥698起"
+          },
+          {
+            id:"2",
+            url:"https://openfile.meizu.com/group1/M00/06/AC/Cgbj0VujaMyAYB76AATj19tgy08068.png",
+            name:"魅族 V8 高配版",
+            desc:"1200万+500万高清双摄",
+            price:"￥1098"
+          },
+          {
+            id:"3",
+            url:"https://openfile.meizu.com/group1/M00/04/0B/Cgbj0FrcblSAGHrPAAvT_qZZSA0427.png",
+            name:"魅族 15",
+            desc:"2000万暗光双摄 AI智能美颜",
+            price:"￥1998起"
+          },
+          {
+            id:"4",
+            url:"https://openfile.meizu.com/group1/M00/03/BC/Cgbj0Vq9-oeARs_XAALvUdl5qpo302.png",
+            name:"魅族 E3",
+            desc:"骁龙636处理器 全系6G大运存",
+            price:"￥1799"
+          }
+        ],
       }
     }
   }
 </script>
 <style scoped>
+  .phone{
+    float: left;
+    position: relative;
+    width: 303px;
+    height: 375px;
+    margin-right: 9px;
+    margin-top: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s ease;
+  }
   .box-info{
     top:58px;
     position: absolute;
