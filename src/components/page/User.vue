@@ -22,19 +22,18 @@
             <a class="link-exchange">兑换</a>
           </div>
           <div>
-          <b-tabs pills card class="tabMenu">
-            <b-tab title="魅币充值">
-            </b-tab>
-            <b-tab title="明细">
-              <b-nav>
-                <b-nav-item>时间</b-nav-item>
-                <b-nav-item>类型</b-nav-item>
-                <b-nav-item>订单号</b-nav-item>
-                <b-nav-item>收支（元）</b-nav-item>
-                <b-nav-item>备注</b-nav-item>
-              </b-nav>
-        </b-tab>
-          </b-tabs>
+            <el-tabs v-model="activeName" @tab-click="handleClick">
+              <el-tab-pane label="魅币充值" name="first">魅币充值</el-tab-pane>
+              <el-tab-pane label="明细" name="second">
+                <b-nav>
+                  <b-nav-item>时间</b-nav-item>
+                  <b-nav-item>类型</b-nav-item>
+                  <b-nav-item>订单号</b-nav-item>
+                  <b-nav-item>收支（元）</b-nav-item>
+                  <b-nav-item>备注</b-nav-item>
+                </b-nav>
+              </el-tab-pane>
+            </el-tabs>
           </div>
         </b-tab>
       </b-tabs>
@@ -55,8 +54,14 @@
         name: "User",
       data () {
         return {
-        }
+          activeName: 'first'
+        };
       },
+      methods: {
+        handleClick(tab, event) {
+          console.log(tab, event);
+        }
+      }
     }
 </script>
 
