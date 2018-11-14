@@ -62,14 +62,20 @@ export default new Router({
         {
           path:'/g/:id',
           component: resolve => require(['../components/page/Goods.vue'], resolve),
-          meta:{title:'用户详情'}
+          meta:{title:'商品详情'}
         },
         {
-          path:'login',
-          component: resolve => require(['../components/page/Login.vue'], resolve),
-          meta:{title:'退出'}
-        }
+          //所有专题组件
+          path: '/collections',
+          component: resolve => require(['../components/page/Collections.vue'], resolve),
+          meta: {title: '所有专题'}
+        },
       ]
+    },
+    {
+      path:'/login',
+      component: resolve => require(['../components/page/Login.vue'], resolve),
+      meta:{title:'退出'}
     },
     {
       // 个人中心组件
