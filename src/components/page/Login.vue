@@ -7,6 +7,7 @@
       </b-navbar-brand>
     </router-link>
   </div>
+
   </div>
 </template>
 
