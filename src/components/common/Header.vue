@@ -36,7 +36,7 @@
           <router-link to="/index">App下载</router-link>
         </b-nav-item>
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2 search-input" type="text" placeholder="Search"/>
+          <b-form-input size="sm" class="mr-sm-2 search-input" type="text" placeholder="魅族16th"/>
           <font-awesome-icon icon="search" style="color: #999;font-size: 20px;margin-left: -50px;"/>
         </b-nav-form>
         <b-nav-item-dropdown right v-if="token!=null">
@@ -48,12 +48,14 @@
           </template>
           <b-dropdown-item><router-link to="list">我的订单</router-link></b-dropdown-item>
           <b-dropdown-item>M码通道</b-dropdown-item>
-          <b-dropdown-item @click="logout"><router-link to="login">退出登录</router-link> </b-dropdown-item>
+          <b-dropdown-item @click="logout"><router-link to="Login">退出登录</router-link> </b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item>
+          <el-badge :value="0" class="item">
           <router-link to="/Shopping-car">
             <b-img rounded="circle" width="35" height="35" src="//www3.res.meizu.com/static/cn/_partial/header/images/shopping-cart-gray_f0fb320.png"/>
           </router-link>
+          </el-badge>
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>

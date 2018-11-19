@@ -50,7 +50,7 @@
         <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/09/25/6192b514-c9e8-4d4d-81d2-a952afb43976.jpg">
       </div>
         <div>
-        <img style="width: 300px;height: 375px"src="https://fms.res.meizu.com/dms/2018/10/09/092fe22f-bc33-4b57-87e7-55168d56d9b3.jpg"><div>
+        <img style="width: 300px;height: 375px"src="https://fms.res.meizu.com/dms/2018/10/09/092fe22f-bc33-4b57-87e7-55168d56d9b3.jpg">
       </div>
       <div>
         <h3 class="title">智能配件</h3>
@@ -68,19 +68,56 @@
         <div class="section-box">
           <img  class="pic" src="https://fms.res.meizu.com/dms/2018/08/07/897616fb-b7d1-49e8-9874-36f0b716048b.jpg">
         </div>
-        <div>
-          <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/09/05/35c143de-5b05-4e2c-87d6-9373bede4831.jpg">
-        </div>
-        <div>
-          <img style="width: 300px;height: 375px" src="https://fms.res.meizu.com/dms/2018/10/09/092fe22f-bc33-4b57-87e7-55168d56d9b3.jpg">
-        </div>
-      </div>
-      </div>
-      <div>
-        <h3 class="title">社区热帖</h3>
-      </div>
-      <div>
-        <h3 class="title">精彩视频</h3>
+          <b-card-group deck style="width: 1240px">
+            <b-card  style="width: 375px;height: 375px;display: block" img-src="https://fms.res.meizu.com/dms/2018/09/26/7c9cfd6e-077f-4535-be59-ef5368bbd757.jpg">
+            </b-card>
+            <b-card img-src="https://openfile.meizu.com/group1/M00/01/B0/Cgbj0VlZqvaAGb0QAAUD7V55-H8213.png">
+              <div class="box-info">
+                  <p class="goods-name">魅蓝旅行包</p>
+                  <p class="goods-desc">轻盈负重 细节开花</p>
+                  <p class="goods-price">￥199</p>
+              </div>
+            </b-card>
+            <b-card img-src="https://openfile.meizu.com/group1/M00/01/FB/Cgbj0Vmnd4mANqFvAAYQNPMfK1w252.png">
+              <div class="box-info">
+                <p class="goods-name">魅蓝数码收纳包</p>
+                <p class="goods-desc">随身收纳 安全放心</p>
+                <p class="goods-price">￥49</p>
+              </div>
+            </b-card>
+            <b-card img-src="https://openfile.meizu.com/group1/M00/03/49/Cgbj0FqwvJWAFb0PAAleBEBSg7E656.png">
+              <div class="box-info">
+                <p class="goods-name">魅蓝20寸旅行箱酷MA萌定制版</p>
+                <p class="goods-desc">静音双排万向轮设计,具备安全TSA海关锁</p>
+                <p class="goods-price">￥349</p>
+              </div>
+            </b-card>
+          </b-card-group>
+        <b-card-group deck style="width: 1240px">
+          <b-card  style="width: 375px;height: 375px;display: block" img-src="https://fms.res.meizu.com/dms/2018/09/26/6fd0292c-aa81-42f9-b1d1-ef572c8744d8.jpg">
+          </b-card>
+          <b-card img-src="https://openfile.meizu.com/group1/M00/01/0B/Cix_s1iW3W-AKGlWAAIXT7S3bdY622.png">
+            <div class="box-info">
+              <p class="goods-name">魅族蓝牙自拍杆</p>
+              <p class="goods-desc">还给你自由的双手</p>
+              <p class="goods-price">￥99</p>
+            </div>
+          </b-card>
+          <b-card img-src="https://openfile.meizu.com/group1/M00/00/9B/CnQOjVgYZV6Af6VlAADvhkEyt98979.png">
+            <div class="box-info">
+              <p class="goods-name">魅族盒子 一键找回遥控器</p>
+              <p class="goods-desc">一键找回遥控器,海量内存,4k输出</p>
+              <p class="goods-price">￥199</p>
+            </div>
+          </b-card>
+          <b-card img-src="https://picsum.photos/300/300/?image=41">
+            <div class="box-info">
+              <p class="goods-name">魅蓝旅行包</p>
+              <p class="goods-desc">轻盈负重 细节开花</p>
+              <p class="goods-price">￥199</p>
+            </div>
+          </b-card>
+        </b-card-group>
       </div>
       </div>
     </div>
@@ -174,6 +211,21 @@
   }
 </script>
 <style scoped>
+  .box-info.goods-desc{
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+  }
+  .box-info .goods-name{
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .box-info{
+    color: #999;
+    font-size: 14px;
+    margin-top: 200px;
+  }
   .phone{
     float: left;
     position: relative;
