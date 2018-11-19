@@ -67,15 +67,9 @@ export default new Router({
         },
         {
           //所有专题组件
-          path: '/collections',
-          component: resolve => require(['../components/page/Collections.vue'], resolve),
-          meta: {title: '所有专题'}
-        },
-        {
-          //所有专题组件
           path: '/search',
           component: resolve => require(['../components/page/Search.vue'], resolve),
-          meta: {title: '所有专题'}
+          meta: {title: '魅族商城'}
         },
       ]
     },
