@@ -7,7 +7,7 @@
       </b-navbar-brand>
     </router-link>
     <b-collapse is-nav id="nav_collapse">
-      <b-navbar-nav>
+      <b-navbar-nav style="margin-left: 400px">
         <b-nav-item>
           <router-link to="/phone">手机</router-link>
         </b-nav-item>
@@ -29,15 +29,22 @@
         <b-nav-item>
           <router-link to="/retail">专卖店</router-link>
         </b-nav-item>
-        <b-nav-item>
-          <router-link to="/index">社区</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/index">App下载</router-link>
-        </b-nav-item>
+        <b-nav-item>社区</b-nav-item>
+        <b-nav-item>App下载</b-nav-item>
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2 search-input" type="text" placeholder="魅族16th"/>
-          <font-awesome-icon icon="search" style="color: #999;font-size: 20px;margin-left: -50px;"/>
+          <div style="width: 200px;height: 40px">
+            <el-col :span="12">
+              <el-autocomplete
+                class="inline-input"
+                v-model="state2"
+                :fetch-suggestions="querySearch"
+                placeholder="魅族16th"
+                :trigger-on-focus="false"
+                @select="handleSelect"
+              ></el-autocomplete>
+            </el-col>
+            <el-button type="primary"><router-link to="search">搜索</router-link></el-button>
+          </div>
         </b-nav-form>
         <b-nav-item-dropdown right v-if="token!=null">
           <b-dropdown-item>
@@ -71,7 +78,9 @@
       return {
         name: '落幕晟傷',
         token:123456,
-      }
+        restaurants: [],
+        state2: ''
+      };
     },
     computed: {
       username() {
@@ -88,9 +97,30 @@
         }
       },
       logout() {
-        localStorage.removeItem('loginUser')
+        localStorage.removeItem('loginUser');
         this.$router.go(0);
-      }
+      },
+      querySearch(queryString, cb) {
+        var restaurants = this.restaurants;
+        var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
+        // 调用 callback 返回建议列表的数据
+        cb(results);
+      },
+      createFilter(queryString) {
+        return (restaurant) => {
+          return (restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
+        };
+      },
+      loadAll(){
+        return[
+          {"value":"魅族16th"},
+          {"value":"魅蓝E"},
+          {"value":"魅蓝note6"}
+        ];
+      },
+    },
+    mounted() {
+      this.restaurants = this.loadAll();
     }
   }
 </script>

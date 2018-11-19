@@ -60,6 +60,7 @@ export default new Router({
           meta: {title: '我的订单'}
         },
         {
+          //商品详情
           path:'/g/:id',
           component: resolve => require(['../components/page/Goods.vue'], resolve),
           meta:{title:'商品详情'}
@@ -68,6 +69,12 @@ export default new Router({
           //所有专题组件
           path: '/collections',
           component: resolve => require(['../components/page/Collections.vue'], resolve),
+          meta: {title: '所有专题'}
+        },
+        {
+          //所有专题组件
+          path: '/search',
+          component: resolve => require(['../components/page/Search.vue'], resolve),
           meta: {title: '所有专题'}
         },
       ]
