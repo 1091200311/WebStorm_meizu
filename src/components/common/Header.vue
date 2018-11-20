@@ -9,7 +9,24 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav style="margin-left: 400px">
         <b-nav-item>
-          <router-link to="/phone">手机</router-link>
+          <el-dropdown>
+            <span class="el-dropdown-link"><router-link to="/phone">手机<i class="el-icon-arrow-down el-icon--right"></i></router-link></span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>
+                <b-card-group>
+                  <b-card style="width: 400px;height: 400px" img-src="https://openfile.meizu.com/group1/M00/05/E2/Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png">
+                  <p style="text-align: center">魅族16th</p>
+                </b-card>
+                  <b-card style="width: 400px;height: 400px" img-src="https://openfile.meizu.com/group1/M00/05/E2/Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png">
+                    <p style="text-align: center">魅族16th</p>
+                  </b-card>
+                  <b-card style="width: 400px;height: 400px" img-src="https://openfile.meizu.com/group1/M00/05/E2/Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png">
+                    <p style="text-align: center">魅族16th</p>
+                  </b-card>
+              </b-card-group>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/voice">声学</router-link>
@@ -103,7 +120,6 @@
       querySearch(queryString, cb) {
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
-        // 调用 callback 返回建议列表的数据
         cb(results);
       },
       createFilter(queryString) {
