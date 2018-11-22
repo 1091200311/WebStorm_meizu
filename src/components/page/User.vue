@@ -3,7 +3,7 @@
     <div>
       <b-nav>
         <b-img width="85" height="50" src="../static/img/meizu.png"/>
-        <b-nav-item>魅族商城</b-nav-item>
+        <b-nav-item><router-link to="/">魅族商城</router-link></b-nav-item>
         <b-nav-item>产品</b-nav-item>
         <b-nav-item>专卖店</b-nav-item>
         <b-nav-item>Flyme</b-nav-item>
@@ -14,6 +14,23 @@
     <b-card no-body>
       <b-tabs pills card>
         <b-tab title="账号管理">
+          <el-table
+            :data="tableData"
+            style="width: 100%">
+            <el-table-column
+              prop="name"
+              label="账号安全"
+              width="180">
+            </el-table-column>
+            <el-table-column
+              prop="state"
+              width="180">
+            </el-table-column>
+            <el-table-column
+              prop="security"
+              label="安全等级：50">
+            </el-table-column>
+          </el-table>
         </b-tab>
         <b-tab title="魅币">
           <div class="account">
@@ -54,7 +71,21 @@
         name: "User",
       data () {
         return {
-          activeName: 'first'
+          activeName: 'first',
+          tableData:[{
+            name:'邮箱',
+            state:'未绑定',
+            security:'修改'
+          },{
+            name:'手机号码',
+            state:'182****9597',
+            security:'修改'
+          },{
+            name:'密保',
+            state:'为设置',
+            security:'修改'
+          }
+          ]
         };
       },
       methods: {

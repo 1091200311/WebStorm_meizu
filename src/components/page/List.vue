@@ -3,22 +3,17 @@
   <div>
     <b-card no-body>
       <b-tabs pills card vertical>
-        <b-tab title="订单中心" disabled></b-tab>
+        <b-tab title="订单中心" disabled>
+          <span slot="label"><i class="el-icon-date"></i> 我的行程</span>
+        </b-tab>
         <b-tab title="我的订单">
-          <b-card no-body>
-            <b-tabs pills card>
-              <b-tab title="全部订单">
-              </b-tab>
-              <b-tab title="待付款">
-              </b-tab>
-              <b-tab title="待发货">
-              </b-tab>
-              <b-tab title="已发货">
-              </b-tab>
-              <b-tab title="其他">
-              </b-tab>
-            </b-tabs>
-          </b-card>
+          <b-nav>
+            <b-nav-item>全部订单</b-nav-item>
+            <b-nav-item>待付款</b-nav-item>
+            <b-nav-item>待发货</b-nav-item>
+            <b-nav-item>已发货</b-nav-item>
+            <b-nav-item>其他</b-nav-item>
+          </b-nav>
         </b-tab>
         <b-tab title="我的回购单">
           <div>
@@ -33,7 +28,54 @@
         </b-tab>
         <b-tab title="个人中心" disabled></b-tab>
         <b-tab title="地址管理">
-          地址管理
+          <div style="color: #666;font-size: 14px">
+            <div style="margin-bottom: 40px">
+              <span class="title">新增收获地址</span>
+              <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                <el-form-item label="收获人姓名" prop="name">
+                  <el-input v-model="ruleForm.name"></el-input>
+                </el-form-item>
+                <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+                  <el-form-item label="收获人手机号" prop="telphone">
+                    <el-input v-model="ruleForm.telphone"></el-input>
+                  </el-form-item>
+                  <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+                    <el-form-item label="收获人地址" prop="address">
+                      <el-input v-model="ruleForm.address"></el-input>
+                    </el-form-item>
+                <el-form-item>
+                  <el-button type="primary" @click="submitForm('ruleForm')">保存</el-button>
+                </el-form-item>
+              </el-form>
+              </el-form>
+              </el-form>
+            </div>
+            <div style="margin-bottom: 40px">
+              <span class="title">已有收获地址</span>
+              <el-table
+                :data="tableData"
+                style="width: 100%">
+                <el-table-column
+                  prop="name"
+                  label="收获人姓名"
+                  width="180">
+                </el-table-column>
+                <el-table-column
+                  prop="address"
+                  label="收获人地址"
+                  width="300">
+                </el-table-column>
+                <el-table-column
+                  prop="phone"
+                  label="收获人手机号">
+                </el-table-column>
+                <el-table-column
+                  prop="action"
+                  label="操作">
+                </el-table-column>
+              </el-table>
+            </div>
+          </div>
         </b-tab>
         <b-tab title="我的收藏">
           我的收藏
@@ -107,7 +149,42 @@
             url:"https://fms.res.meizu.com/dms/2018/07/13/1c5cfeff-1b35-499e-bc2a-1fd29305be69.png",
             content:"上门快修"
           }
-        ]
+        ],
+        tableData:[
+          {
+            name:"黄晟",
+            address:"江苏省南京市栖霞区仙林街道仙林大学城羊山北路1号南京工业职业技术学院",
+            phone:"18252039597",
+            action:"修改 删除"
+          },
+          {
+            name:"黄晟",
+            address:"江苏省常州市溧阳市上黄镇桥北村45号",
+            phone:"18252039597",
+            action:"修改 删除"
+          }
+        ],
+        ruleForm: {
+          name: '',
+          telphone:'',
+          region: '',
+        },
+        rules: {
+          name: [
+            { required: true, message: '必填', trigger: 'blur' },
+            { min: 2, max: 3, message: '长度在 2 到 3 个字符', trigger: 'blur' }
+          ],
+          telphone:[
+            { required: true, message: '必填', trigger: 'blur' },
+            { min: 11, max: 11, message: '长度在 11 个字符', trigger: 'blur' }
+          ],
+          address:[
+            { required: true, message: '必填', trigger: 'blur' }
+          ],
+          region: [
+            { required: true, message: '请选择', trigger: 'change' }
+          ],
+        }
       }
     },
     computed: {
@@ -127,11 +204,31 @@
       logout() {
         localStorage.removeItem('loginUser')
         this.$router.go(0);
+      },
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
       }
     }
   }
 </script>
 <style scoped>
+  .title{
+    line-height: 38px;
+    padding-left: 25px;
+    margin: 10px 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
   .desc{
     padding-top: 332px;
     text-align: center;
